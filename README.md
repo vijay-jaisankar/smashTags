@@ -1,0 +1,2 @@
+# smashTags
+Clarifai hackathon submission
