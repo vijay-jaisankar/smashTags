@@ -1,0 +1,28 @@
+@media screen and (min-width: 800px) {
+    tr {
+        display: inline;
+    }
+}
+
+.upload-divs {
+    display: inline-block;
+    border: 1px solid;
+    padding: 20px;
+    width: 450px;
+    margin: 10px;
+}
+
+button {
+    margin: 15px;
+    width: 40%;
+    padding: 4px;
+}
+
+textarea {
+    width: 85%;
+    margin: 0 15px;
+}
+
+.file-input {
+    display: none;
+}

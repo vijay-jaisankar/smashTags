@@ -1,0 +1,7 @@
+<div id="container">
+    <table>
+        <tr *ngFor="let plat of platforms">
+            <td (click)="setPlatform(plat.name)">{{plat.name}}</td>
+        </tr>
+    </table>
+</div>
