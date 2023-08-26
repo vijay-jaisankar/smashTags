@@ -12,7 +12,7 @@ export class UploadDocumentsComponent implements OnInit {
   audioFile: any;
   constructor(private support: SupportService) { }
   ngOnInit(): void {
-    // this.options = this.support.getUploadOptions();
+    this.options = this.support.getUploadOptions();
   }
 
   onImageSelected(event: any) {

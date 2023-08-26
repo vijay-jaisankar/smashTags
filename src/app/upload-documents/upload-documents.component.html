@@ -1,62 +1,62 @@
-<table>
-    <tr *ngIf="options.includes('Image')" class="upload-divs">
+<div id="container">
+    <table>
+        <tr *ngIf="options.includes('Image')" class="upload-divs">
 
-        <input type="file" class="file-input" (change)="onImageSelected($event)" #fileUpload>
+            <input type="file" class="file-input" (change)="onImageSelected($event)" #fileUpload>
 
-        <div class="file-upload">
+            <div class="file-upload">
 
-            <span *ngIf="imageFile==null">
-                Upload image
-            </span>
-            <span *ngIf="imageFile!=null">
-                {{imageFile.name}}
-            </span>
+                <span *ngIf="imageFile==null">
+                    Upload image
+                </span>
+                <span *ngIf="imageFile!=null">
+                    {{imageFile.name}}
+                </span>
 
-            <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
-                <mat-icon>attach_file</mat-icon>
+                <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+                    <mat-icon>attach_file</mat-icon>
+                </button>
+            </div>
+
+            <button mat-raised-button color="primary">
+                Generate Hashtags
             </button>
-        </div>
-
-        <br>
-        <button mat-raised-button color="primary">
-            Generate Hashtags
-        </button>
-        <button mat-raised-button color="primary">
-            Generate Title
-        </button>
-    </tr>
-    <tr *ngIf="options.includes('Text')" class="upload-divs">
-        <textarea matInput rows="5" placeholder="Upload Text"></textarea>
-        <br>
-        <button mat-raised-button color="primary">
-            Generate Hashtags
-        </button>
-        <button mat-raised-button color="primary">
-            Generate Title
-        </button>
-    </tr>
-    <tr *ngIf="options.includes('Audio')" class="upload-divs">
-        <input type="file" class="file-input" (change)="onAudioSelected($event)" #fileUpload>
-
-        <div class="file-upload">
-
-            <span *ngIf="audioFile==null">
-                Upload audio
-            </span>
-            <span *ngIf="audioFile!=null">
-                {{audioFile.name}}
-            </span>
-
-            <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
-                <mat-icon>attach_file</mat-icon>
+            <button mat-raised-button color="primary">
+                Generate Title
             </button>
-        </div>
-        <br>
-        <button mat-raised-button color="primary">
-            Generate Hashtags
-        </button>
-        <button mat-raised-button color="primary">
-            Generate Title
-        </button>
-    </tr>
-</table>
+        </tr>
+        <tr *ngIf="options.includes('Text')" class="upload-divs">
+            <textarea matInput rows="5" placeholder="Upload Text"></textarea>
+            <br>
+            <button mat-raised-button color="primary">
+                Generate Hashtags
+            </button>
+            <button mat-raised-button color="primary">
+                Generate Title
+            </button>
+        </tr>
+        <tr *ngIf="options.includes('Audio')" class="upload-divs">
+            <input type="file" class="file-input" (change)="onAudioSelected($event)" #fileUpload>
+
+            <div class="file-upload">
+
+                <span *ngIf="audioFile==null">
+                    Upload audio
+                </span>
+                <span *ngIf="audioFile!=null">
+                    {{audioFile.name}}
+                </span>
+
+                <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+                    <mat-icon>attach_file</mat-icon>
+                </button>
+            </div>
+            <button mat-raised-button color="primary">
+                Generate Hashtags
+            </button>
+            <button mat-raised-button color="primary">
+                Generate Title
+            </button>
+        </tr>
+    </table>
+</div>

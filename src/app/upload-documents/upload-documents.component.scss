@@ -10,6 +10,7 @@
     padding: 20px;
     width: 450px;
     margin: 10px;
+    height: 40vh;
 }
 
 button {
@@ -25,4 +26,18 @@ textarea {
 
 .file-input {
     display: none;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 200px;
+}
+
+.upload-btn {
+    width: 50px;
 }
