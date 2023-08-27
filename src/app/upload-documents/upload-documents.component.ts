@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class UploadDocumentsComponent implements OnInit {
   options = ["Image", "Text", "Audio", "Video"];
   selectedOption = "";
-  fileUpload: any;
+  fileToBeUpload: any;
   textData = "Upload Text";
   constructor(private support: SupportService, private router: Router) { }
   ngOnInit(): void {
@@ -21,16 +21,14 @@ export class UploadDocumentsComponent implements OnInit {
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
     if (file) {
-      this.fileUpload = file;
-      const formData = new FormData();
-      formData.append("thumbnail", file);
+      this.fileToBeUpload = file;
     }
   }
 
   goPost(uploadType: string) {
-    this.support.uploadFile(uploadType, this.fileUpload);
+    this.support.uploadFile(uploadType, this.fileToBeUpload);
     // Adding waiting signal
-    this.router.navigate(["/post"]);
+    // this.router.navigate(["/post"]);
   }
   postText() {
     this.support.uploadText(this.textData);

@@ -8,7 +8,8 @@ import { HttpHeaders } from '@angular/common/http';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    Authorization: 'my-auth-token'
+    Authorization: 'my-auth-token',
+    // 'Access-Control-Allow-Origin': '*'
   })
 };
 @Injectable({
@@ -55,11 +56,20 @@ export class SupportService {
   }
 
   uploadFile(upload: string, uploadFile: File) {
-    // API to upload Audio/Video/Image to be put here
-    // string upload has the key which data to be uploaded and uploadFile has the actual data
+    let testData: FormData = new FormData();
+    testData.append('image', uploadFile, this.uploadFile.name);
+    httpOptions.headers.append('enctype', 'multipart/form-data')
+    this.http.post('http://smashtagsapi.pythonanywhere.com/api/' + upload, testData
+    ).subscribe((res: any) => {
+      console.log(res);
+      this.generatedData.Hashtags = res["sample_text"];
+      this.generatedData.Title = res["sample_text"];
+      console.log(this.generatedData);
+      this.router.navigate(["/post"]);
+    });
+
   }
   uploadText(uploadDoc: string) {
-    // Upload the blog text to generate title and hastags
     let data = {
       "input_text": uploadDoc
     };
