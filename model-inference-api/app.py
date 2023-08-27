@@ -1,3 +1,11 @@
+"""
+    @note This file contains the API routes to inference clarif.ai workflows.
+    Functionalities
+        - Base route to check if the infra is up.
+"""
+
+
+
 from flask import Flask
 
 app = Flask(__name__)
