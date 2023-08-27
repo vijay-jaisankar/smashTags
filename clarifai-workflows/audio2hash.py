@@ -4,7 +4,7 @@ PAT = 'PAT'
 APP_ID = 'audio-to-text'
 # Change these to make your own predictions
 WORKFLOW_ID = 'workflow-a34cd2'
-AUDIO_FILE_LOCATION = './sample-inputs/allusionist_ad_read.mp3'
+AUDIO_FILE_LOCATION = './sample-inputs/noise_cleaned.mpga'
 
 ##########################################################################
 # YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE TO RUN THIS EXAMPLE
