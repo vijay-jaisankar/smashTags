@@ -9,14 +9,18 @@ export class SupportService {
   constructor(private http: HttpClient) { }
 
   private platforms = [
-    { name: "Instagram", icon: "Link", uploads: ["Image"] },
-    { name: "Twitter", icon: "Link", uploads: ["Image", "Text"] }
+    { name: "Instagram", icon: "Link", uploads: ["Image", "Video"] },
+    { name: "Twitter", icon: "Link", uploads: ["Image", "Text", "Video"] },
+    { name: "Youtube", icon: "Link", uploads: ["Video"] },
+    { name: "Blogger", icon: "Link", uploads: ["Text"] },
+    { name: "Podcast", icon: "Link", uploads: ["Audio"] }
+
   ]
-  private selectedPlatform: string = "";
-  private uploadDoc = {
-    uploadType: "Image",
-    value: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fhd&psig=AOvVaw2-wldmuATeiyA9QQHLG1jP&ust=1693224217386000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCKjI2PLl_IADFQAAAAAdAAAAABAE"
-  }
+  private selectedPlatform: string = "Youtube";
+  generatedData = {
+    Title: "Sample Title",
+    Hashtags: "Sample hashtags"
+  };
 
   // Getters and setters start frm here
   getPlatforms() {
@@ -32,22 +36,20 @@ export class SupportService {
     return wc;
   }
 
-
   setPlatform(pform: string) {
     this.selectedPlatform = pform;
   }
 
-  getHashTags() {
-    let url = "http://localhost:5555"
-    return this.http.get(url);
+  getGenerateData() {
+    return this.generatedData;
   }
 
-  setUploadType(upload: string) {
-    this.uploadDoc.uploadType = upload;
+  uploadFile(upload: string, uploadFile: File) {
+    // API to upload audio/ video/ image to be put here
+    // string upload has the key which data to be uploaded and uploadFile has the actual data
   }
-
-  getUploadType() {
-    return this.uploadDoc;
+  uploadText(uploadDoc: string) {
+    // Upload the blog text to generate title and hastags
   }
 
 }

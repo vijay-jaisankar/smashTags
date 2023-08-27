@@ -1,7 +1,12 @@
 <div id="container">
     <table>
         <tr *ngFor="let plat of platforms">
-            <td (click)="setPlatform(plat.name)">{{plat.name}}</td>
+            <td (click)="setPlatform(plat.name)">
+                <div class="mat-elevation-z4 icons">
+                    <img src="../../../assets/{{plat.name}}.png" />
+                    {{plat.name}}
+                </div>
+            </td>
         </tr>
     </table>
     <br>

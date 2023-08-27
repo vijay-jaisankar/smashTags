@@ -8,16 +8,18 @@ import { SupportService } from 'src/app/support.service';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-  uploadDoc = {
-    uploadType: "",
-    value: ""
-  };
+
   constructor(
     private supportService: SupportService,
     private router: Router
   ) { }
+  generatedData = {
+    Title: "Sample Title",
+    Hashtags: "Sample hashtags"
+  };
+
   ngOnInit(): void {
-    this.uploadDoc = this.supportService.getUploadType();
+    this.generatedData = this.supportService.getGenerateData();
   }
   goBack() {
     this.router.navigate(['upload']);

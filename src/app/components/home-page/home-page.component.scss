@@ -11,7 +11,6 @@
     height: 92vh;
     background-color: lightgray;
     text-align: center;
-    line-height: 200px;
 }
 
 tr {
@@ -20,4 +19,22 @@ tr {
 
 td {
     cursor: pointer;
+}
+
+.icons {
+    height: 100px;
+    padding: 20px;
+    border-radius: 10px;
+
+    img {
+        height: 70%;
+        display: block;
+        margin: 10px;
+    }
+}
+
+button {
+    display: block;
+    position: absolute;
+    bottom: 100px;
 }

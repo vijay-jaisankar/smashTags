@@ -8,34 +8,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./upload-documents.component.scss'],
 })
 export class UploadDocumentsComponent implements OnInit {
-  options = ["Image", "Text", "Audio"];
-  imageFile: any;
-  audioFile: any;
+  options = ["Image", "Text", "Audio", "Video"];
+  selectedOption = "";
+  fileUpload: any;
+  textData = "Upload Text";
   constructor(private support: SupportService, private router: Router) { }
   ngOnInit(): void {
-    // this.options = this.support.getUploadOptions();
+    this.options = this.support.getUploadOptions();
+    this.selectedOption = this.options[0];
   }
 
-  onImageSelected(event: any) {
+  onFileSelected(event: any) {
     const file: File = event.target.files[0];
     if (file) {
-      this.imageFile = file;
+      this.fileUpload = file;
       const formData = new FormData();
       formData.append("thumbnail", file);
     }
   }
-  onAudioSelected(event: any) {
-    const file: File = event.target.files[0];
-    if (file) {
-      this.audioFile = file;
-      const formData = new FormData();
-      formData.append("thumbnail", file);
-    }
-  }
-
 
   goPost(uploadType: string) {
-    this.support.setUploadType(uploadType);
+    this.support.uploadFile(uploadType, this.fileUpload);
+    // Adding waiting signal
+    this.router.navigate(["/post"]);
+  }
+  postText() {
+    this.support.uploadText(this.textData);
+    // Adding waiting signal
     this.router.navigate(["/post"]);
   }
 }
