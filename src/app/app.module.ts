@@ -15,13 +15,15 @@ import { PostComponent } from './components/post/post.component';
 import { ShowPostsComponent } from './components/show-posts/show-posts.component';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
+import { LandingComponent } from './components/landing/landing.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     UploadDocumentsComponent,
     PostComponent,
-    ShowPostsComponent
+    ShowPostsComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

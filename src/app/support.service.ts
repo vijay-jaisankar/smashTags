@@ -45,7 +45,7 @@ export class SupportService {
   }
 
   uploadFile(upload: string, uploadFile: File) {
-    // API to upload audio/ video/ image to be put here
+    // API to upload Audio/Video/Image to be put here
     // string upload has the key which data to be uploaded and uploadFile has the actual data
   }
   uploadText(uploadDoc: string) {

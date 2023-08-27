@@ -4,11 +4,12 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
 import { PostComponent } from './components/post/post.component';
 import { ShowPostsComponent } from './components/show-posts/show-posts.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 const routes: Routes = [
   {
     path: "",
-    component: HomePageComponent
+    component: LandingComponent
   },
   {
     path: "home",
