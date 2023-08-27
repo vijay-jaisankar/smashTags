@@ -34,7 +34,5 @@ export class UploadDocumentsComponent implements OnInit {
   }
   postText() {
     this.support.uploadText(this.textData);
-    // Adding waiting signal
-    this.router.navigate(["/post"]);
   }
 }
