@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SupportService } from '../support.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-upload-documents',
@@ -10,9 +11,9 @@ export class UploadDocumentsComponent implements OnInit {
   options = ["Image", "Text", "Audio"];
   imageFile: any;
   audioFile: any;
-  constructor(private support: SupportService) { }
+  constructor(private support: SupportService, private router: Router) { }
   ngOnInit(): void {
-    this.options = this.support.getUploadOptions();
+    // this.options = this.support.getUploadOptions();
   }
 
   onImageSelected(event: any) {
@@ -32,4 +33,9 @@ export class UploadDocumentsComponent implements OnInit {
     }
   }
 
+
+  goPost(uploadType: string) {
+    this.support.setUploadType(uploadType);
+    this.router.navigate(["/post"]);
+  }
 }

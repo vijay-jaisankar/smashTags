@@ -8,11 +8,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PostComponent } from './components/post/post.component';
+import { ShowPostsComponent } from './components/show-posts/show-posts.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    UploadDocumentsComponent
+    UploadDocumentsComponent,
+    PostComponent,
+    ShowPostsComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +27,10 @@ import { MatIconModule } from '@angular/material/icon';
     AppRoutingModule,
     MatButtonModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

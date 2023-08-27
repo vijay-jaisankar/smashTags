@@ -1,0 +1,36 @@
+<div id="container">
+    <!-- <div class="mat-elevation-z4 confirmHashs" *ngIf="uploadDoc.uploadType=='Text'">
+        <p>
+            {{uploadDoc.value}}
+        </p>
+        <div class="confirm">Confirming Hashtags</div>
+
+    </div>
+    <div class="mat-elevation-z4 confirmHashs" *ngIf="uploadDoc.uploadType=='Audio'">
+        Audio
+        <div class="confirm">Confirming Hashtags</div>
+
+    </div>
+    <div class="mat-elevation-z4 confirmHashs" *ngIf="uploadDoc.uploadType=='Image'">
+        <img src={{uploadDoc.value}} />
+
+        <div class="confirm">Confirming Hashtags</div>
+
+    </div> -->
+    <div class="confirmHashs">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Title" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+
+            <textarea matInput placeholder="Hashtags" rows="5"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="postIt()">
+            Post
+        </button>
+        <button mat-raised-button color="primary" (click)="goBack()">
+            Cancel
+        </button>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+    background-color: white;
+}
+
+.confirmHashs {
+    width: 40vw;
+    height: 40vh;
+    background-color: rgb(240, 240, 240);
+}
+
+// p {
+//     line-height: 1.5em;
+//     width: 45%;
+//     text-align: justify;
+//     padding: 40px;
+//     overflow: scroll;
+//     height: 80%;
+//     display: inline-block;
+// }
+
+// .confirm {
+//     // width: 40%;
+//     display: inline-block;
+//     width: 40%;
+//     height: 85%;
+//     position: relative;
+//     top: -90%;
+//     margin: 50px;
+// }
+
+
+// new Content, May need to change it
+.confirmHashs {
+    padding: 40px;
+    height: 35vh;
+    text-align: center;
+}
+
+mat-form-field {
+    margin: 10px;
+    width: 90%;
+}
+
+
+button {
+    margin: 10px;
+}
