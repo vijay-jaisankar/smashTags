@@ -1,0 +1,101 @@
+<div id="container">
+    <div id="selector">
+        <mat-form-field>
+            <mat-label>Document Type</mat-label>
+            <mat-select [(value)]="selectedOption">
+                <mat-option *ngFor="let option of options" value="{{option}}">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <table>
+        <tr *ngIf="selectedOption=='Image'" class="mat-elevation-z4 upload-divs">
+            <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+            <div class="file-upload">
+
+
+                <button mat-raised-button (click)="fileUpload.click()">
+                    <mat-icon>attach_file</mat-icon>
+
+                    <span *ngIf="fileToBeUpload==null">
+                        Upload image
+                    </span>
+                    <span *ngIf="fileToBeUpload!=null">
+                        {{fileToBeUpload.name}}
+                    </span>
+
+                </button>
+            </div>
+
+            <button mat-raised-button color="primary" (click)="goPost('image')">
+                Generate Hashtags
+            </button>
+        </tr>
+
+
+
+        <tr *ngIf="selectedOption=='Text'" class="mat-elevation-z4 upload-divs">
+            <mat-form-field class="example-full-width">
+                <textarea matInput rows="5" placeholder="Upload Text" [(ngModel)]="textData"></textarea>
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" (click)="postText()">
+                Generate Hashtags
+            </button>
+
+        </tr>
+
+        <tr *ngIf="selectedOption=='Audio'" class="mat-elevation-z4 upload-divs">
+            <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+
+            <div class="file-upload">
+
+
+                <button mat-raised-button (click)="fileUpload.click()">
+                    <mat-icon>attach_file</mat-icon>
+
+                    <span *ngIf="fileToBeUpload==null">
+                        Upload audio
+                    </span>
+                    <span *ngIf="fileToBeUpload!=null">
+                        {{fileToBeUpload.name}}
+                    </span>
+                </button>
+            </div>
+            <button mat-raised-button color="primary" (click)="goPost('audio')">
+                Generate Hashtags
+            </button>
+
+        </tr>
+
+
+        <tr *ngIf="selectedOption=='Video'" class="mat-elevation-z4 upload-divs">
+
+            <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+
+            <div class="file-upload">
+
+
+                <button mat-raised-button (click)="fileUpload.click()">
+                    <mat-icon>attach_file</mat-icon>
+
+                    <span *ngIf="fileToBeUpload==null">
+                        Upload Video
+                    </span>
+                    <span *ngIf="fileToBeUpload!=null">
+                        {{fileToBeUpload.name}}
+                    </span>
+
+                </button>
+            </div>
+
+            <button mat-raised-button color="primary" (click)="goPost('video')">
+                Generate Hashtags
+            </button>
+        </tr>
+
+
+    </table>
+</div>

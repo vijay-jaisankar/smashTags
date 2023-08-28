@@ -1,0 +1,45 @@
+@media screen and (min-width: 800px) {
+    tr {
+        display: inline;
+    }
+}
+
+.upload-divs {
+    display: inline-block;
+    padding: 20px;
+    width: 450px;
+    margin: 10px;
+    height: 40vh;
+}
+
+button {
+    margin: 15px;
+    width: 40%;
+    padding: 4px;
+}
+
+mat-form-field {
+    width: 90%;
+}
+
+.file-input {
+    display: none;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+    text-align: center;
+    line-height: 200px;
+}
+
+tr {
+    background-color: lightgray;
+}
+
+#selector {
+    width: 30%;
+    display: block;
+}

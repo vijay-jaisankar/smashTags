@@ -1,0 +1,40 @@
+@media screen and (min-width: 800px) {
+    tr {
+        display: inline;
+    }
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+    background-color: lightgray;
+    text-align: center;
+}
+
+tr {
+    margin: 10px;
+}
+
+td {
+    cursor: pointer;
+}
+
+.icons {
+    height: 100px;
+    padding: 20px;
+    border-radius: 10px;
+
+    img {
+        height: 70%;
+        display: block;
+        margin: 10px;
+    }
+}
+
+button {
+    display: block;
+    position: absolute;
+    bottom: 100px;
+}

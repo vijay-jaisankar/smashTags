@@ -1,0 +1,20 @@
+<div id="container">
+
+    <div class="confirmHashs">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Title" [(ngModel)]="generatedData.Title" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+
+            <textarea matInput placeholder="Hashtags" rows="5" [(ngModel)]="generatedData.Hashtags"></textarea>
+        </mat-form-field>
+        <a href="{{link}}" target="_blank">
+            <button mat-raised-button color="primary" (click)="postIt()">
+                Post
+            </button>
+        </a>
+        <button mat-raised-button color="primary" (click)="goBack()">
+            Cancel
+        </button>
+    </div>
+</div>
