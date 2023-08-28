@@ -5,3 +5,11 @@ Creators invest substantial time and effort into generating high-quality content
 ## Idea Brief
 
 AI-driven social Media content optimization which ransforms content optimization across various social media platforms like Instagram, Twitter, YouTube and podcasts. Tackle the complexity of crafting platform-specific titles, captivating descriptions and effective hashtags to elevate engagement and amplify content discovery.
+
+## Features
+- Relevancy Ranking
+- Direct post functionaly
+- Handle multimodal data
+- Harnessing the power of Llama-2
+- Uses various models like BLIP-2 , Video KeyExtraction , Wav-2-vec
+
