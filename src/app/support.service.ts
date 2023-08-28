@@ -17,6 +17,7 @@ const httpOptions = {
 })
 export class SupportService {
   constructor(private http: HttpClient, private router: Router) { }
+  private loading: boolean = false;
 
   private platforms = [
     { name: "Instagram", icon: "Link", uploads: ["Image", "Video"] },
@@ -56,20 +57,21 @@ export class SupportService {
   }
 
   uploadFile(upload: string, uploadFile: File) {
+    this.setLoading(true);
     let testData: FormData = new FormData();
     testData.append('image', uploadFile, this.uploadFile.name);
     httpOptions.headers.append('enctype', 'multipart/form-data')
     this.http.post('http://smashtagsapi.pythonanywhere.com/api/' + upload, testData
     ).subscribe((res: any) => {
-      console.log(res);
-      this.generatedData.Hashtags = res["sample_text"];
-      this.generatedData.Title = res["sample_text"];
-      console.log(this.generatedData);
+      this.generatedData.Hashtags = res["hashtags"];
+      this.generatedData.Title = res["topic"];
       this.router.navigate(["/post"]);
+      this.setLoading(false);
     });
 
   }
   uploadText(uploadDoc: string) {
+    this.setLoading(true);
     let data = {
       "input_text": uploadDoc
     };
@@ -77,7 +79,16 @@ export class SupportService {
       this.generatedData.Title = res["topic"];
       this.generatedData.Hashtags = res["hashtags"];
       this.router.navigate(["/post"]);
+      this.setLoading(false);
     });
+  }
+
+  setLoading(loading: boolean) {
+    this.loading = loading;
+  }
+
+  getLoading(): boolean {
+    return this.loading;
   }
 
 }

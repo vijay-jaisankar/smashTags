@@ -16,6 +16,7 @@ import { ShowPostsComponent } from './components/show-posts/show-posts.component
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { LandingComponent } from './components/landing/landing.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { LandingComponent } from './components/landing/landing.component';
     UploadDocumentsComponent,
     PostComponent,
     ShowPostsComponent,
-    LandingComponent
+    LandingComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
