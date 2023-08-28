@@ -1,0 +1,7 @@
+[TEXT]
+user_id = 'meta'
+app_id = 'Llama-2'
+model_id = 'llama2-7b-chat'
+version_id = 'e52af5d6bc22445aa7a6761f327f7129'
+pat = 'not_your_key'
+workflow_id = 'not_custom'
