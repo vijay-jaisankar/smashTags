@@ -1,4 +1,4 @@
-# smashTags
+## smashTags
 Problem Statement:- Creators invest substantial time and effort into generating high-quality content that resonates with their intended audience. However, even the most exceptional content might remain unnoticed making content undiscoverable by the target audience and the broader online community. 
 
 Inadequate descriptions, vague titles, and outdated or irrelevant hashtags limit the visibility and reach of the content, preventing it from reaching its potential viewership.
