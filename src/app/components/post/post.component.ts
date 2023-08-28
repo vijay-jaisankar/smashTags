@@ -17,9 +17,11 @@ export class PostComponent implements OnInit {
     Title: "Sample Title",
     Hashtags: "Sample hashtags"
   };
+  link = "";
 
   ngOnInit(): void {
     this.generatedData = this.supportService.getGenerateData();
+    this.link = this.supportService.getPlatformLink();
   }
   goBack() {
     this.router.navigate(['upload']);

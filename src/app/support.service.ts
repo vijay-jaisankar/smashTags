@@ -20,11 +20,11 @@ export class SupportService {
   private loading: boolean = false;
 
   private platforms = [
-    { name: "Instagram", icon: "Link", uploads: ["Image", "Video"] },
-    { name: "Twitter", icon: "Link", uploads: ["Image", "Text", "Video"] },
-    { name: "Youtube", icon: "Link", uploads: ["Video"] },
-    { name: "Blogger", icon: "Link", uploads: ["Text"] },
-    { name: "Podcast", icon: "Link", uploads: ["Audio"] }
+    { name: "Instagram", icon: "http://www.instagram.com", uploads: ["Image", "Video"] },
+    { name: "Twitter", icon: "http://www.twitter.com", uploads: ["Image", "Text", "Video"] },
+    { name: "Youtube", icon: "http://www.youtube.com", uploads: ["Video"] },
+    { name: "Blogger", icon: "http://www.blogger.com", uploads: ["Text"] },
+    { name: "Podcast", icon: "http://www.spotify.com", uploads: ["Audio"] }
 
   ]
   private selectedPlatform: string = "Twitter";
@@ -90,5 +90,12 @@ export class SupportService {
   getLoading(): boolean {
     return this.loading;
   }
-
+  getPlatformLink() {
+    for (let plat in this.platforms) {
+      if (this.platforms[plat].name == this.selectedPlatform) {
+        return this.platforms[plat].icon;
+      }
+    }
+    return "None";
+  }
 }

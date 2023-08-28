@@ -8,10 +8,11 @@
 
             <textarea matInput placeholder="Hashtags" rows="5" [(ngModel)]="generatedData.Hashtags"></textarea>
         </mat-form-field>
-
-        <button mat-raised-button color="primary" (click)="postIt()">
-            Post
-        </button>
+        <a href="{{link}}" target="_blank">
+            <button mat-raised-button color="primary" (click)="postIt()">
+                Post
+            </button>
+        </a>
         <button mat-raised-button color="primary" (click)="goBack()">
             Cancel
         </button>
