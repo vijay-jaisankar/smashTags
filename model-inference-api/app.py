@@ -119,6 +119,57 @@ def get_hashtags_for_text():
 
     return output_dict
 
+"""
+    Image to Hashtags generator
+    Calls `BLIP2`
+"""
+@app.route("/api/image/", methods = ["POST"])
+def get_hashtags_for_image():
+    # Setting custom workflow credentials
+    USER_ID = 'shivankar_pi'
+    PAT = 'pat'
+    APP_ID = 'first'
+    # Change these to make your own predictions
+    WORKFLOW_ID = 'workflow-e9d49d'
+
+    image_bytes = request.files['image'].read()
+    print(f"Length of input file: {len(image_bytes)}")
+
+    channel = ClarifaiChannel.get_grpc_channel()
+    stub = service_pb2_grpc.V2Stub(channel)
+
+    metadata = (('authorization', 'Key ' + PAT),)
+    userDataObject = resources_pb2.UserAppIDSet(user_id=USER_ID, app_id=APP_ID) # The userDataObject is required when using a PAT
+
+    # Call the workflow
+    post_workflow_results_response = stub.PostWorkflowResults(
+        service_pb2.PostWorkflowResultsRequest(
+            user_app_id=userDataObject,
+            workflow_id=WORKFLOW_ID,
+            inputs=[
+                resources_pb2.Input(
+                    data=resources_pb2.Data(
+                        image=resources_pb2.Image(
+                            base64 = image_bytes
+                        )
+                    )
+                )
+            ]
+        ),
+        metadata=metadata
+    )
+    if post_workflow_results_response.status.code != status_code_pb2.SUCCESS:
+        print(post_workflow_results_response.status)
+        raise Exception("Post workflow results failed, status: " + post_workflow_results_response.status.description)
+
+    results = post_workflow_results_response.results[0]
+
+    for output in results.outputs[::-1]:
+        print(output.data.text.raw)
+        output_dict = {'sample_text': output.data.text.raw}
+
+    return output_dict
+
 
 
 # Launch the app
