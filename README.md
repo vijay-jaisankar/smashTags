@@ -15,3 +15,5 @@ AI-driven social Media content optimization which ransforms content optimization
 - Harnessing the power of Llama-2
 - Uses various models like BLIP-2 , Video KeyExtraction , Wav-2-vec
 
+## NOTE:- 
+Please enable CORS extention to run the application
